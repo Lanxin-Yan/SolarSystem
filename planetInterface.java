@@ -1,5 +1,5 @@
 /**
- * interface which contains all methods that all planets require
+ * interface which contains all methods that all planets require, this interface will be inherited to the planet.java class
  */
 public interface planetInterface{
     void setDistance(double n);
