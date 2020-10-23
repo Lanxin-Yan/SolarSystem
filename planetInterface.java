@@ -11,5 +11,4 @@ public interface planetInterface{
     double getAngle();
     double getDiameter();
     String getColour();
-
 }
