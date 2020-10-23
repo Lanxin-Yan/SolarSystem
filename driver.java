@@ -28,30 +28,31 @@ public class driver {
                angles[i] = ThreadLocalRandom.current().nextDouble(min, max);   
             }
 
-            dustParticles[] dustParticles = new dustParticles[300]; //create an array of instances of dustparticles.
-            double[] dustAngles = new double[300]; //similar to @angles, this will create an array of 300 doubles, between 0-360
-            for (int i = 0; i < 300; i++){ 
-                dustParticles[i] = new dustParticles(320 + rand.nextInt(30), dustAngles[i] = ThreadLocalRandom.current().nextDouble(min, max), 1, "WHITE");
+            planet sun = new planet(0, 0, 250, "#eb6834"); //creating instances of diffrent planets 
+            planet mercury = new planet(150, angles[0], 8, "#a2e8cc");
+            planet venus = new planet(170, angles[1], 15, "ORANGE");
+            planet earth = new planet(190, angles[2], 12, "BLUE");
+            planet mars = new planet(220, angles[3], 8, "#a85832");
+            planet jupiter = new planet(260, angles[4], 80, "#968075");
+            planet saturn = new planet(410, angles[5], 75, "#ad7153");
+            planet uranus = new planet(483, angles[6], 30, "#31ebcc");
+            planet neptune = new planet(558, angles[7], 27, "#0e1ab5");
+
+            moon earthMoon = new moon(10, angles[2], 3, "GREY", earth.getDistance(), earth.getAngle()); //creating instances for earth's moon
+            
+            moon[] saturnMoons = new moon[82]; //because jupiter has 82 moons
+
+            double[] saturnMoonAngles = new double[82]; //created an array of doubles will will hold angles for each saturn's moons, whill be randomised below with a for loop
+            for (int i = 0; i < 82; i++){
+                saturnMoons[i] = new moon(50, saturnMoonAngles[i] = ThreadLocalRandom.current().nextDouble(min, max), 2, "YELLOW", saturn.getDistance(), saturn.getAngle());
             }
 
-            
+            planet[] dustParticles = new planet[300]; //create an array of instances of dustparticles.
 
-            sun sun = new sun(0, 0, 250, "#eb6834"); //creating instances of diffrent planets 
-            mercury mercury = new mercury(150, angles[0], 8, "#a2e8cc");
-            venus venus = new venus(170, angles[1], 15, "ORANGE");
-            earth earth = new earth(190, angles[2], 12, "BLUE");
-            mars mars = new mars(220, angles[3], 8, "#a85832");
-            jupiter jupiter = new jupiter(260, angles[4], 80, "#968075");
-            saturn saturn = new saturn(410, angles[5], 75, "#ad7153");
-            uranus uranus = new uranus(483, angles[6], 30, "#31ebcc");
-            neptune neptune = new neptune(558, angles[7], 27, "#0e1ab5");
+            double[] dustAngles = new double[300]; //similar to @angles, this will create an array of 300 doubles, between 0-360
 
-            earthMoon earthMoon = new earthMoon(10, angles[2], 3, "GREY", earth.getDistance(), earth.getAngle()); //creating instances for earth's moon
-            
-            saturnMoon[] saturnMoons = new saturnMoon[82]; //because jupiter has 82 moons
-            double[] saturnMoonAngles = new double[82];
-            for (int i = 0; i < 82; i++){
-                saturnMoons[i] = new saturnMoon(50, saturnMoonAngles[i] = ThreadLocalRandom.current().nextDouble(min, max), 2, "YELLOW", saturn.getDistance(), saturn.getAngle());
+            for (int i = 0; i < 300; i++){  
+                dustParticles[i] = new planet(320 + rand.nextInt(30), dustAngles[i] = ThreadLocalRandom.current().nextDouble(min, max), 1, "WHITE");
             }
 
         while (true){ 

@@ -33,7 +33,7 @@ public class planet implements planetInterface{
     }
 
     /**
-     * updates the planets diameter
+     * override setter for dia
      */
     public void setDiameter(double n){
         this.diameter = n;

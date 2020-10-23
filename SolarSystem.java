@@ -10,6 +10,8 @@ import java.util.*;
  */
 public class SolarSystem extends JFrame 
 {
+
+	private static final long serialVersionUID = 1L;
 	private int width = 300;
 	private int height = 300;
     private boolean exiting = false;
