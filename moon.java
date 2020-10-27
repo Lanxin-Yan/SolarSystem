@@ -4,7 +4,7 @@ public class moon extends planet implements moonInterface{
     private double centreOfRotationDistance;
 
     /**
-     * 
+     * Class for moon, has inherited all behaviour from planet.java, and implemented some extra methods that a moon class requires from mooninterface.java
      * @param distance distance between the moon and its orbital object
      * @param angle polar angle bearing the moon to its orbital object
      * @param diameter  diameter of the moon
